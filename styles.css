@@ -24,17 +24,35 @@ main {
   width: 15%;
 }
 
-.human-stats-container,
-.computer-stats-container h1, h2 {
-  font-size: 20px;
+.human-stats-container h1,
+.computer-stats-container h1 {
+  font-size: 50px;
+}
+
+.human-stats-container h2,
+.computer-stats-container h2 {
+  font-size: 25px;
+  margin-top: -25px;
+  margin-bottom: 0;
 }
 
 .human-stats-container,
-.computer-stats-container p{
+.computer-stats-container p {
   font-size: 18px;
 }
 
-.game-console-container {
+.change-game-button {
+  background-color: #9D50D0;
+  width: 80%;
+  height: 5%;
+  border: none;
+  box-shadow: none;
+  margin-top: 75px;
+}
+
+.game-console-container,
+.classic-game-container,
+.spicy-game-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -44,12 +62,16 @@ main {
   margin: 0;
 }
 
-.game-console-container h1 {
+.game-console-container h1,
+.classic-game-container h1,
+.spicy-game-container h1 {
   font-size: 70px;
   font-weight: 700;
 }
 
-.game-console-container h2 {
+.game-console-container h2,
+.classic-game-container h2,
+.spicy-game-container h2 {
   margin-top: -95px;
 }
 
@@ -74,4 +96,43 @@ main {
 .classic-game-button h3,
 .spicy-game-button h3 {
   margin-top: 10;
+}
+
+.fighter-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -75px;
+}
+
+.player1-token {
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: -315px;
+}
+
+.player1-token p{
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+
+#rock-btn,
+#paper-btn,
+#scissors-btn,
+#lizard-btn-spicy,
+#alien-btn-spicy,
+#rock-btn-spicy,
+#paper-btn-spicy,
+#scissors-btn-spicy {
+  width: 175px;
+  height: auto;
+  margin-bottom: 150px;
+}
+
+.hidden {
+  display: none;
 }
