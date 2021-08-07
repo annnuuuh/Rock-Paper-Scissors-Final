@@ -15,7 +15,8 @@
     <div class="human-stats-container">
       <h1>👩🏻‍💻</h1>
       <h2>Human</h2>
-      <p>Wins: 0</p>
+      <p id="player1Wins">Wins: 0</p>
+      <button class="change-game-button hidden">CHANGE GAME?</button>
     </div>
     <div class="game-console-container">
       <h1>Rock, Paper, Scissors</h1>
@@ -29,16 +30,41 @@
       <button class="spicy-game-button">
         <h3>🦎 SPICY 👽</h3>
           <p>rock > lizard & scissors</p>
-          <p>paper > rock & spock</p>
+          <p>paper > rock & alien</p>
           <p>scissors > paper & lizard</p>
-          <p>lizard > paper & spock</p>
-          <p>spock > paper & rock</p>
+          <p>lizard > paper & alien</p>
+          <p>alien > paper & rock</p>
       </button>
     </div>
+      <div class="view classic-game-container hidden">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>Choose your fighter!</h2>
+        <div class="fighter-options">
+          <input type="image" id="rock-btn" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+          <input type="image" id="paper-btn" name="options" src="./assets/happy-paper.png" alt="paper image">
+          <input type="image" id="scissors-btn" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+      </div>
+      <div class="player1-token">
+        <p>👩🏻‍💻</p>
+        <p>👩🏻‍💻</p>
+        <p>👩🏻‍💻</p>
+      </div>
+    </div>
+      <div class="view spicy-game-container hidden">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>Choose your fighter!</h2>
+        <div class="fighter-options">
+          <input type="image" id="rock-btn-spicy" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+          <input type="image" id="paper-btn-spicy" name="options" src="./assets/happy-paper.png" alt="paper image">
+          <input type="image" id="scissors-btn-spicy" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+          <input type="image" id="lizard-btn-spicy" name="options" src="./assets/lizard.png" alt="lizard image">
+          <input type="image" id="alien-btn-spicy" name="options" src="./assets/happy-alien.png" alt="alien image">
+      </div>
+      </div>
     <div class="computer-stats-container">
       <h1>‍💻</h1>
       <h2>Computer</h2>
-      <p>Wins: 0</p>
+      <p id="player2Wins">Wins: 0</p>
     </div>
   </main>
 </body>
