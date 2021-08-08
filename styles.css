@@ -64,14 +64,16 @@ main {
 
 .game-console-container h1,
 .classic-game-container h1,
-.spicy-game-container h1 {
+.spicy-game-container h1,
+.chosen-fighters h1 {
   font-size: 70px;
   font-weight: 700;
 }
 
 .game-console-container h2,
 .classic-game-container h2,
-.spicy-game-container h2 {
+.spicy-game-container h2,
+.chosen-fighters h2 {
   margin-top: -95px;
 }
 
@@ -131,6 +133,19 @@ main {
   width: 175px;
   height: auto;
   margin-bottom: 150px;
+}
+
+.chosen-fighters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 175px;
+  height: auto;
 }
 
 .hidden {

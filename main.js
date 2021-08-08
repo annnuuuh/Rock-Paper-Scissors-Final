@@ -21,6 +21,8 @@ var turnDelay = 2000;
 var rockChoiceToken = document.querySelector('.rockChoiceToken');
 var paperChoiceToken = document.querySelector('.paperChoiceToken');
 var scissorsChoiceToken = document.querySelector('.scissorsChoiceToken');
+var player1FighterView = document.querySelector('.player1-fighter');
+var player2FighterView = document.querySelector('.player2-fighter');
 var player1Fighter = document.createElement('img');
 var player2Fighter = document.createElement('img');
 var game;
@@ -55,17 +57,48 @@ spicyPaperBtn.addEventListener('click', function () {
 changeGameButton.addEventListener('click', chooseNewGameType);
 
 //FUNCTIONS
-function showFighters() {
+function showPlayer1Fighter() {
   spicyGameView.classList.add('hidden');
   classicGameView.classList.add('hidden');
   chosenFightersView.classList.remove('hidden');
-  player1Fighter.src = './assets/happy-rocks.png'
-  document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  player1FighterView.classList.remove('hidden');
+  if (game.player1.choice === 'rock') {
+    player1Fighter.src = './assets/happy-rocks.png';
+    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  } if (game.player1.choice === 'paper') {
+    player1Fighter.src = './assets/happy-paper.png'
+    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  } if (game.player1.choice === 'scissors') {
+    player1Fighter.src = './assets/happy-scissors.png'
+    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  } if (game.player1.choice === 'lizard') {
+    player1Fighter.src = './assets/lizard.png'
+    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  } if (game.player1.choice === 'alien') {
+    player1Fighter.src = './assets/happy-alien.png'
+    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
   }
+}
 
-  // const img = new Image(100, 200); // width, height
-  // img.src = "https://picsum.photos/200/301";
-  // document.body.appendChild(img);
+function showPlayer2Fighter() {
+  player2FighterView.classList.remove('hidden');
+  if (game.player2.choice === 'rock') {
+    player2Fighter.src = './assets/happy-rocks.png';
+    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
+  } if (game.player2.choice === 'paper') {
+    player2Fighter.src = './assets/happy-paper.png'
+    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
+  } if (game.player2.choice === 'scissors') {
+    player2Fighter.src = './assets/happy-scissors.png'
+    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
+  } if (game.player2.choice === 'lizard') {
+    player2Fighter.src = './assets/lizard.png'
+    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
+  } if (game.player2.choice === 'alien') {
+    player2Fighter.src = './assets/happy-alien.png'
+    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
+  }
+}
 
 function playerTurns(choice) {
   game.player1.takeTurn(choice);
@@ -74,7 +107,21 @@ function playerTurns(choice) {
   changeGameButton.classList.remove('hidden');
   player1Wins.innerText = `Wins: ${game.player1.wins}`;
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
-  showFighters();
+  showPlayer1Fighter();
+  showPlayer2Fighter();
+  setTimeout(startAnotherGame, 2000);
+}
+
+function startAnotherGame() {
+    chosenFightersView.classList.add('hidden');
+    chooseGameView.classList.add('hidden');
+    player2FighterView.classList.add('hidden');
+    player1FighterView.classList.add('hidden');
+    if (game.type === 'spicy') {
+      spicyGameView.classList.remove('hidden');
+  } if (game.type === 'classic') {
+      classicGameView.classList.remove('hidden');
+  }
 }
 
 function startClassicGame(event) {
