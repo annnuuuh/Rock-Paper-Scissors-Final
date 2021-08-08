@@ -2,6 +2,7 @@
 var classicGameView = document.querySelector('.classic-game-container');
 var chooseGameView = document.querySelector('.game-console-container');
 var spicyGameView = document.querySelector('.spicy-game-container');
+var chosenFightersView = document.querySelector('.chosen-fighters');
 // BUTTONS
 var classicGameBtn = document.querySelector('.classic-game-button');
 var spicyGameBtn = document.querySelector('.spicy-game-button');
@@ -17,6 +18,11 @@ var changeGameButton = document.querySelector('.change-game-button');
 var player1Wins = document.querySelector('#player1Wins');
 var player2Wins = document.querySelector('#player2Wins');
 var turnDelay = 2000;
+var rockChoiceToken = document.querySelector('.rockChoiceToken');
+var paperChoiceToken = document.querySelector('.paperChoiceToken');
+var scissorsChoiceToken = document.querySelector('.scissorsChoiceToken');
+var player1Fighter = document.createElement('img');
+var player2Fighter = document.createElement('img');
 var game;
 
 //EVENT LISTENERS
@@ -48,8 +54,19 @@ spicyPaperBtn.addEventListener('click', function () {
 });
 changeGameButton.addEventListener('click', chooseNewGameType);
 
-
 //FUNCTIONS
+function showFighters() {
+  spicyGameView.classList.add('hidden');
+  classicGameView.classList.add('hidden');
+  chosenFightersView.classList.remove('hidden');
+  player1Fighter.src = './assets/happy-rocks.png'
+  document.querySelector('.chosen-fighters').appendChild(player1Fighter);
+  }
+
+  // const img = new Image(100, 200); // width, height
+  // img.src = "https://picsum.photos/200/301";
+  // document.body.appendChild(img);
+
 function playerTurns(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
@@ -57,6 +74,7 @@ function playerTurns(choice) {
   changeGameButton.classList.remove('hidden');
   player1Wins.innerText = `Wins: ${game.player1.wins}`;
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
+  showFighters();
 }
 
 function startClassicGame(event) {
