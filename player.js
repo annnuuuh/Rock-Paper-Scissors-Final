@@ -2,27 +2,31 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = 0;
+    this.wins = localStorage.getItem(`${this.name} wins`) || 0;
     this.choice = null;
   }
   takeTurn(choice) {
     if (!choice) {
       var chosenIndex = Math.floor(Math.random() * game.choices.length);
       this.choice = game.choices[chosenIndex];
-      console.log(this.choice);
       return;
     }
       this.choice = choice;
       return;
   }
   saveWinsToStorage() {
+    var objectToStore = this.wins;
+    var stringifiedObject = JSON.stringify(objectToStore);
+    localStorage.setItem(`${this.name} wins`, stringifiedObject);
+    console.log(objectToStore);
   }
+
   retrieveWinsFromStorage() {
+    var retrievedObject = localStorage.getItem(`${this.name} wins`);
+    var parsedObject = JSON.parse(retrievedObject);
+    return parsedObject;
   }
+
   }
-// A player.js file that contains a Player class.
-// Player methods must include, but are not limited to:
-// constructor - properties should include: name (ex: 'Human'), token (ex: '👩🏻'), wins (ex: 0)
-// saveWinsToStorage
-// retrieveWinsFromStorage
-// takeTurn
+// when i display the wins, i am retreiving from storage and that is
+// what is displayed

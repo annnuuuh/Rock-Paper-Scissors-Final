@@ -100,11 +100,19 @@ function showPlayer2Fighter() {
   }
 }
 
+window.onload = function() {
+  game = new Game();
+  player1Wins.innerText = `Wins: ${game.player1.wins}`;
+  player2Wins.innerText = `Wins: ${game.player2.wins}`;
+}
+
 function playerTurns(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
   game.determineWinner();
   changeGameButton.classList.remove('hidden');
+  // var humanWins = game.player1.retrieveWinsFromStorage();
+  // var computerWins = game.player2.retrieveWinsFromStorage();
   player1Wins.innerText = `Wins: ${game.player1.wins}`;
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
   showPlayer1Fighter();
@@ -139,7 +147,7 @@ function startSpicyGame(event) {
 }
 
 function startNewGame(type) {
-  game = new Game(type)
+  // game = new Game(type)
   game.playGame(type);
 }
 
@@ -149,3 +157,9 @@ function chooseNewGameType() {
   chooseGameView.classList.remove('hidden');
   changeGameButton.classList.add('hidden');
 }
+
+// function populatePastWins() {
+//   document.getElementById("player1wins").innerHTML = localStorage.getItem(`${this.name} wins`);
+//   document.getElementById("player2wins").innerHTML = localStorage.getItem(`${this.name} wins`);
+//   }
+// }
