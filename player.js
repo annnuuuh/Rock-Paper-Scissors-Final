@@ -5,15 +5,18 @@ class Player {
     this.wins = localStorage.getItem(`${this.name} wins`) || 0;
     this.choice = null;
   }
+
   takeTurn(choice) {
     if (!choice) {
       var chosenIndex = Math.floor(Math.random() * game.choices.length);
       this.choice = game.choices[chosenIndex];
       return;
     }
+
       this.choice = choice;
       return;
   }
+
   saveWinsToStorage() {
     var objectToStore = this.wins;
     var stringifiedObject = JSON.stringify(objectToStore);
