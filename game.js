@@ -15,7 +15,10 @@ class Game {
   }
 
   determineWinner() {
-    if (this.player1.choice === 'rock' && this.player2.choice === 'lizard' || this.player1.choice === 'rock' && this.player2.choice === 'scissors') {
+    if (this.player1.choice === this.player2.choice) {
+        this.winner = 'Draw'
+        return `😱 It's a draw! 😱`;
+    } if (this.player1.choice === 'rock' && this.player2.choice === 'lizard' || this.player1.choice === 'rock' && this.player2.choice === 'scissors') {
         this.winner = this.player1.name;
         this.player1.wins++
         this.player1.saveWinsToStorage();
@@ -45,9 +48,6 @@ class Game {
         this.player1.saveWinsToStorage();
         this.player2.saveWinsToStorage();
         return `👩🏻‍💻 ${game.player1.name} Wins! 👩🏻‍💻`;
-    } if (this.player1.choice === this.player2.choice) {
-        this.winner = 'Draw'
-        return `😱 It's a draw! 😱`;
     }
 
         this.winner = this.player2.name;

@@ -4,6 +4,7 @@ var spicyGameView = document.querySelector('.spicy-game-container');
 var chosenFightersView = document.querySelector('.winning-player');
 var classicGameBtn = document.querySelector('.classic-game-button');
 var spicyGameBtn = document.querySelector('.spicy-game-button');
+var changeGameBtn = document.querySelector('.change-game-button');
 var rockBtn = document.querySelector('#rockBtn');
 var scissorsBtn = document.querySelector('#scissorsBtn');
 var paperBtn = document.querySelector('#paperBtn');
@@ -12,18 +13,13 @@ var spicyLizardBtn = document.querySelector('#lizardBtnSpicy');
 var spicyRockBtn = document.querySelector('#rockBtnSpicy');
 var spicyPaperBtn = document.querySelector('#paperBtnSpicy');
 var spicyScissorsBtn = document.querySelector('#scissorsBtnSpicy');
-var changeGameBtn = document.querySelector('.change-game-button');
 var player1Wins = document.querySelector('#player1Wins');
 var player2Wins = document.querySelector('#player2Wins');
-var rockChoiceToken = document.querySelector('.rockChoiceToken');
-var paperChoiceToken = document.querySelector('.paperChoiceToken');
-var scissorsChoiceToken = document.querySelector('.scissorsChoiceToken');
+var announceWinner = document.querySelector('#announceWinner');
 var player1Fighter = document.createElement('img');
 var player2Fighter = document.createElement('img');
 var player1ChosenFighter = document.querySelector('.chosen-fighters-container').appendChild(player1Fighter);
 var player2ChosenFighter = document.querySelector('.chosen-fighters-container').appendChild(player2Fighter);
-var announceWinner = document.querySelector('#announceWinner');
-var turnDelay = 2000;
 var game;
 
 classicGameBtn.addEventListener('click', startClassicGame);
@@ -63,6 +59,7 @@ window.onload = function() {
 function show(element) {
   element.classList.remove('hidden');
 }
+
 function hide(element) {
   element.classList.add('hidden');
 }

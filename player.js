@@ -29,4 +29,4 @@ class Player {
     return parsedObject;
   }
 
-  }
+}
