@@ -3,6 +3,10 @@
   color: #FFFFFF;
 }
 
+html {
+  background-color: #049297;
+}
+
 main {
   display: flex;
   justify-content: space-between;
@@ -20,7 +24,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-color: #03767A;
-  height: 100%;
+  height: 100vh;
   width: 15%;
 }
 
@@ -48,11 +52,6 @@ main {
   border: none;
   box-shadow: none;
   margin-top: 75px;
-}
-
-.change-game-button:hover {
-  border: solid 2px white;
-  cursor: pointer;
 }
 
 .game-console-container {
@@ -106,7 +105,8 @@ main {
   margin-top: 30px;
 }
 
-.game-console-container button:hover {
+.game-console-container button:hover,
+.change-game-button:hover {
   border: solid 2px white;
 }
 
@@ -134,14 +134,7 @@ main {
   margin-top: 100px;
 }
 
-#rockBtn,
-#paperBtn,
-#scissorsBtn,
-#lizardBtnSpicy,
-#alienBtnSpicy,
-#rockBtnSpicy,
-#paperBtnSpicy,
-#scissorsBtnSpicy {
+.fighter-options input {
   width: 175px;
   height: auto;
   margin-bottom: 20px;
