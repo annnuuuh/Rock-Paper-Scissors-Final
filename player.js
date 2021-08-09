@@ -18,7 +18,6 @@ class Player {
     var objectToStore = this.wins;
     var stringifiedObject = JSON.stringify(objectToStore);
     localStorage.setItem(`${this.name} wins`, stringifiedObject);
-    console.log(objectToStore);
   }
 
   retrieveWinsFromStorage() {
@@ -28,5 +27,3 @@ class Player {
   }
 
   }
-// when i display the wins, i am retreiving from storage and that is
-// what is displayed

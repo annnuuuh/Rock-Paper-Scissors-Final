@@ -12,13 +12,13 @@
 </head>
 <body>
   <main>
-    <div class="human-stats-container">
+    <aside class="human-stats-container">
       <h1>👩🏻‍💻</h1>
       <h2>Human</h2>
       <p id="player1Wins">Wins: 0</p>
       <button class="change-game-button hidden">CHANGE GAME?</button>
-    </div>
-    <div class="game-console-container">
+    </aside>
+    <section class="game-console-container">
       <h1>Rock, Paper, Scissors</h1>
       <h2>Choose your game!</h2>
       <button class="classic-game-button">
@@ -35,43 +35,38 @@
           <p>lizard > paper & alien</p>
           <p>alien > paper & rock</p>
       </button>
-    </div>
-      <div class="view classic-game-container hidden">
+    </section>
+    <section class="view classic-game-container hidden">
         <h1>Rock, Paper, Scissors</h1>
         <h2>Choose your fighter!</h2>
         <div class="fighter-options">
-          <input type="image" id="rock-btn" name="options" src="./assets/happy-rocks.png" alt="rocks image">
-          <input type="image" id="paper-btn" name="options" src="./assets/happy-paper.png" alt="paper image">
-          <input type="image" id="scissors-btn" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+          <input type="image" id="rockBtn" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+          <input type="image" id="paperBtn" name="options" src="./assets/happy-paper.png" alt="paper image">
+          <input type="image" id="scissorsBtn" name="options" src="./assets/happy-scissors.png" alt="scissors image">
       </div>
-      <div class="player1-token">
-        <p class="rockChoiceToken hidden">👩🏻‍💻</p>
-        <p class="paperChoiceToken hidden">👩🏻‍💻</p>
-        <p class="scissorsChoiceToken hidden">👩🏻‍💻</p>
-      </div>
-    </div>
-      <div class="view spicy-game-container hidden">
+    </section>
+      <section class="view spicy-game-container hidden">
         <h1>Rock, Paper, Scissors</h1>
         <h2>Choose your fighter!</h2>
         <div class="fighter-options">
-          <input type="image" id="rock-btn-spicy" name="options" src="./assets/happy-rocks.png" alt="rocks image">
-          <input type="image" id="paper-btn-spicy" name="options" src="./assets/happy-paper.png" alt="paper image">
-          <input type="image" id="scissors-btn-spicy" name="options" src="./assets/happy-scissors.png" alt="scissors image">
-          <input type="image" id="lizard-btn-spicy" name="options" src="./assets/lizard.png" alt="lizard image">
-          <input type="image" id="alien-btn-spicy" name="options" src="./assets/happy-alien.png" alt="alien image">
-      </div>
-      </div>
-      <div class="chosen-fighters hidden">
+          <input type="image" id="rockBtnSpicy" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+          <input type="image" id="paperBtnSpicy" name="options" src="./assets/happy-paper.png" alt="paper image">
+          <input type="image" id="scissorsBtnSpicy" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+          <input type="image" id="lizardBtnSpicy" name="options" src="./assets/lizard.png" alt="lizard image">
+          <input type="image" id="alienBtnSpicy" name="options" src="./assets/happy-alien.png" alt="alien image">
+        </div>
+      </section>
+      <section class="view winning-player hidden">
         <h1>Rock, Paper, Scissors</h1>
-        <h2>It's a draw!</h2>
-        <div class="player1-fighter hidden"></div>
-        <div class="player2-fighter hidden"></div>
-      </div>
-    <div class="computer-stats-container">
+        <h2 id="announceWinner">It's a draw!</h2>
+        <div class="chosen-fighters-container">
+        </div>
+      </section>
+    <aside class="computer-stats-container">
       <h1>‍💻</h1>
       <h2>Computer</h2>
       <p id="player2Wins">Wins: 0</p>
-    </div>
+    </aside>
   </main>
 </body>
 <script src="./main.js"></script>

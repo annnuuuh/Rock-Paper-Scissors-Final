@@ -1,35 +1,34 @@
-// VIEWS
 var classicGameView = document.querySelector('.classic-game-container');
 var chooseGameView = document.querySelector('.game-console-container');
 var spicyGameView = document.querySelector('.spicy-game-container');
-var chosenFightersView = document.querySelector('.chosen-fighters');
-// BUTTONS
+var chosenFightersView = document.querySelector('.winning-player');
 var classicGameBtn = document.querySelector('.classic-game-button');
 var spicyGameBtn = document.querySelector('.spicy-game-button');
-var rockBtn = document.querySelector('#rock-btn');
-var scissorsBtn = document.querySelector('#scissors-btn');
-var paperBtn = document.querySelector('#paper-btn');
-var spicyAlienBtn = document.querySelector('#alien-btn-spicy');
-var spicyLizardBtn = document.querySelector('#lizard-btn-spicy');
-var spicyRockBtn = document.querySelector('#rock-btn-spicy');
-var spicyPaperBtn = document.querySelector('#paper-btn-spicy');
-var spicyScissorsBtn = document.querySelector('#scissors-btn-spicy');
-var changeGameButton = document.querySelector('.change-game-button');
+var rockBtn = document.querySelector('#rockBtn');
+var scissorsBtn = document.querySelector('#scissorsBtn');
+var paperBtn = document.querySelector('#paperBtn');
+var spicyAlienBtn = document.querySelector('#alienBtnSpicy');
+var spicyLizardBtn = document.querySelector('#lizardBtnSpicy');
+var spicyRockBtn = document.querySelector('#rockBtnSpicy');
+var spicyPaperBtn = document.querySelector('#paperBtnSpicy');
+var spicyScissorsBtn = document.querySelector('#scissorsBtnSpicy');
+var changeGameBtn = document.querySelector('.change-game-button');
 var player1Wins = document.querySelector('#player1Wins');
 var player2Wins = document.querySelector('#player2Wins');
-var turnDelay = 2000;
 var rockChoiceToken = document.querySelector('.rockChoiceToken');
 var paperChoiceToken = document.querySelector('.paperChoiceToken');
 var scissorsChoiceToken = document.querySelector('.scissorsChoiceToken');
-var player1FighterView = document.querySelector('.player1-fighter');
-var player2FighterView = document.querySelector('.player2-fighter');
 var player1Fighter = document.createElement('img');
 var player2Fighter = document.createElement('img');
+var player1ChosenFighter = document.querySelector('.chosen-fighters-container').appendChild(player1Fighter);
+var player2ChosenFighter = document.querySelector('.chosen-fighters-container').appendChild(player2Fighter);
+var announceWinner = document.querySelector('#announceWinner');
+var turnDelay = 2000;
 var game;
 
-//EVENT LISTENERS
 classicGameBtn.addEventListener('click', startClassicGame);
 spicyGameBtn.addEventListener('click', startSpicyGame);
+changeGameBtn.addEventListener('click', chooseNewGameType);
 rockBtn.addEventListener('click', function () {
   playerTurns('rock')
 });
@@ -54,51 +53,6 @@ spicyScissorsBtn.addEventListener('click', function () {
 spicyPaperBtn.addEventListener('click', function () {
   playerTurns('paper')
 });
-changeGameButton.addEventListener('click', chooseNewGameType);
-
-//FUNCTIONS
-function showPlayer1Fighter() {
-  spicyGameView.classList.add('hidden');
-  classicGameView.classList.add('hidden');
-  chosenFightersView.classList.remove('hidden');
-  player1FighterView.classList.remove('hidden');
-  if (game.player1.choice === 'rock') {
-    player1Fighter.src = './assets/happy-rocks.png';
-    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
-  } if (game.player1.choice === 'paper') {
-    player1Fighter.src = './assets/happy-paper.png'
-    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
-  } if (game.player1.choice === 'scissors') {
-    player1Fighter.src = './assets/happy-scissors.png'
-    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
-  } if (game.player1.choice === 'lizard') {
-    player1Fighter.src = './assets/lizard.png'
-    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
-  } if (game.player1.choice === 'alien') {
-    player1Fighter.src = './assets/happy-alien.png'
-    document.querySelector('.chosen-fighters').appendChild(player1Fighter);
-  }
-}
-
-function showPlayer2Fighter() {
-  player2FighterView.classList.remove('hidden');
-  if (game.player2.choice === 'rock') {
-    player2Fighter.src = './assets/happy-rocks.png';
-    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
-  } if (game.player2.choice === 'paper') {
-    player2Fighter.src = './assets/happy-paper.png'
-    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
-  } if (game.player2.choice === 'scissors') {
-    player2Fighter.src = './assets/happy-scissors.png'
-    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
-  } if (game.player2.choice === 'lizard') {
-    player2Fighter.src = './assets/lizard.png'
-    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
-  } if (game.player2.choice === 'alien') {
-    player2Fighter.src = './assets/happy-alien.png'
-    document.querySelector('.chosen-fighters').appendChild(player2Fighter);
-  }
-}
 
 window.onload = function() {
   game = new Game();
@@ -106,13 +60,52 @@ window.onload = function() {
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
 }
 
+function showPlayer1Fighter() {
+  spicyGameView.classList.add('hidden');
+  classicGameView.classList.add('hidden');
+  chosenFightersView.classList.remove('hidden');
+  if (game.player1.choice === 'rock') {
+    player1Fighter.src = './assets/happy-rocks.png';
+    player1ChosenFighter;
+  } if (game.player1.choice === 'paper') {
+    player1Fighter.src = './assets/happy-paper.png';
+    player1ChosenFighter;
+  } if (game.player1.choice === 'scissors') {
+    player1Fighter.src = './assets/happy-scissors.png';
+    player1ChosenFighter;
+  } if (game.player1.choice === 'lizard') {
+    player1Fighter.src = './assets/lizard.png';
+    player1ChosenFighter;
+  } if (game.player1.choice === 'alien') {
+    player1Fighter.src = './assets/happy-alien.png';
+    player1ChosenFighter;
+  }
+}
+
+function showPlayer2Fighter() {
+  if (game.player2.choice === 'rock') {
+    player2Fighter.src = './assets/happy-rocks.png';
+    player2ChosenFighter;
+  } if (game.player2.choice === 'paper') {
+    player2Fighter.src = './assets/happy-paper.png';
+    player2ChosenFighter;
+  } if (game.player2.choice === 'scissors') {
+    player2Fighter.src = './assets/happy-scissors.png';
+    player2ChosenFighter;
+  } if (game.player2.choice === 'lizard') {
+    player2Fighter.src = './assets/lizard.png';
+    player2ChosenFighter;
+  } if (game.player2.choice === 'alien') {
+    player2Fighter.src = './assets/happy-alien.png';
+    player2ChosenFighter;
+  }
+}
+
 function playerTurns(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
-  game.determineWinner();
-  changeGameButton.classList.remove('hidden');
-  // var humanWins = game.player1.retrieveWinsFromStorage();
-  // var computerWins = game.player2.retrieveWinsFromStorage();
+  announceWinner.innerText = game.determineWinner();
+  changeGameBtn.classList.remove('hidden');
   player1Wins.innerText = `Wins: ${game.player1.wins}`;
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
   showPlayer1Fighter();
@@ -123,8 +116,6 @@ function playerTurns(choice) {
 function startAnotherGame() {
     chosenFightersView.classList.add('hidden');
     chooseGameView.classList.add('hidden');
-    player2FighterView.classList.add('hidden');
-    player1FighterView.classList.add('hidden');
     if (game.type === 'spicy') {
       spicyGameView.classList.remove('hidden');
   } if (game.type === 'classic') {
@@ -147,7 +138,6 @@ function startSpicyGame(event) {
 }
 
 function startNewGame(type) {
-  // game = new Game(type)
   game.playGame(type);
 }
 
@@ -155,11 +145,5 @@ function chooseNewGameType() {
   spicyGameView.classList.add('hidden');
   classicGameView.classList.add('hidden');
   chooseGameView.classList.remove('hidden');
-  changeGameButton.classList.add('hidden');
+  changeGameBtn.classList.add('hidden');
 }
-
-// function populatePastWins() {
-//   document.getElementById("player1wins").innerHTML = localStorage.getItem(`${this.name} wins`);
-//   document.getElementById("player2wins").innerHTML = localStorage.getItem(`${this.name} wins`);
-//   }
-// }
