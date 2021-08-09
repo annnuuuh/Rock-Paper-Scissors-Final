@@ -60,10 +60,29 @@ window.onload = function() {
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
 }
 
+function show(element) {
+  element.classList.remove('hidden');
+}
+function hide(element) {
+  element.classList.add('hidden');
+}
+
+function playerTurns(choice) {
+  show(changeGameBtn);
+  game.player1.takeTurn(choice);
+  game.player2.takeTurn();
+  announceWinner.innerText = game.determineWinner();
+  player1Wins.innerText = `Wins: ${game.player1.wins}`;
+  player2Wins.innerText = `Wins: ${game.player2.wins}`;
+  showPlayer1Fighter();
+  showPlayer2Fighter();
+  setTimeout(startAnotherGame, 2000);
+}
+
 function showPlayer1Fighter() {
-  spicyGameView.classList.add('hidden');
-  classicGameView.classList.add('hidden');
-  chosenFightersView.classList.remove('hidden');
+  hide(spicyGameView);
+  hide(classicGameView);
+  show(chosenFightersView);
   if (game.player1.choice === 'rock') {
     player1Fighter.src = './assets/happy-rocks.png';
     player1ChosenFighter;
@@ -101,39 +120,27 @@ function showPlayer2Fighter() {
   }
 }
 
-function playerTurns(choice) {
-  game.player1.takeTurn(choice);
-  game.player2.takeTurn();
-  announceWinner.innerText = game.determineWinner();
-  changeGameBtn.classList.remove('hidden');
-  player1Wins.innerText = `Wins: ${game.player1.wins}`;
-  player2Wins.innerText = `Wins: ${game.player2.wins}`;
-  showPlayer1Fighter();
-  showPlayer2Fighter();
-  setTimeout(startAnotherGame, 2000);
-}
-
 function startAnotherGame() {
-    chosenFightersView.classList.add('hidden');
-    chooseGameView.classList.add('hidden');
+    hide(chosenFightersView);
+    hide(chooseGameView);
     if (game.type === 'spicy') {
-      spicyGameView.classList.remove('hidden');
+      show(spicyGameView);
   } if (game.type === 'classic') {
-      classicGameView.classList.remove('hidden');
+      show(classicGameView);
   }
 }
 
 function startClassicGame(event) {
   event.preventDefault();
-  classicGameView.classList.remove('hidden');
-  chooseGameView.classList.add('hidden');
+  show(classicGameView);
+  hide(chooseGameView);
   startNewGame('classic');
 }
 
 function startSpicyGame(event) {
   event.preventDefault();
-  spicyGameView.classList.remove('hidden');
-  chooseGameView.classList.add('hidden');
+  show(spicyGameView);
+  hide(chooseGameView);
   startNewGame('spicy');
 }
 
@@ -142,8 +149,8 @@ function startNewGame(type) {
 }
 
 function chooseNewGameType() {
-  spicyGameView.classList.add('hidden');
-  classicGameView.classList.add('hidden');
-  chooseGameView.classList.remove('hidden');
-  changeGameBtn.classList.add('hidden');
+  show(chooseGameView);
+  hide(spicyGameView);
+  hide(classicGameView);
+  hide(changeGameBtn);
 }
