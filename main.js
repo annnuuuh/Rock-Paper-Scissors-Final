@@ -142,7 +142,6 @@ function startSpicyGame(event) {
 }
 
 function startNewGame(type) {
-  // game = new Game();
   game.playGame(type);
 }
 
