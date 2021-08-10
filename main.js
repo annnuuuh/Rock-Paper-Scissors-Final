@@ -71,8 +71,8 @@ function playGame(choice) {
   announceWinner.innerText = game.determineWinner();
   player1Wins.innerText = `Wins: ${game.player1.wins}`;
   player2Wins.innerText = `Wins: ${game.player2.wins}`;
-  showPlayer1Fighter();
-  showPlayer2Fighter();
+  showPlayer1Fighter(game.player1);
+  showPlayer2Fighter(game.player2);
   setTimeout(startAnotherGame, 2000);
 }
 
@@ -82,18 +82,23 @@ function showPlayer1Fighter() {
   show(chosenFightersView);
   if (game.player1.choice === 'rock') {
     player1Fighter.src = './assets/happy-rocks.png';
+    player1Fighter.alt = 'rocks image';
     player1ChosenFighter;
   } if (game.player1.choice === 'paper') {
     player1Fighter.src = './assets/happy-paper.png';
+    player1Fighter.alt = 'paper image';
     player1ChosenFighter;
   } if (game.player1.choice === 'scissors') {
     player1Fighter.src = './assets/happy-scissors.png';
+    player1Fighter.alt = 'scissors image';
     player1ChosenFighter;
   } if (game.player1.choice === 'lizard') {
     player1Fighter.src = './assets/lizard.png';
+    player1Fighter.alt = 'lizard image';
     player1ChosenFighter;
   } if (game.player1.choice === 'alien') {
     player1Fighter.src = './assets/happy-alien.png';
+    player1Fighter.alt = 'alien image';
     player1ChosenFighter;
   }
 }
@@ -101,18 +106,23 @@ function showPlayer1Fighter() {
 function showPlayer2Fighter() {
   if (game.player2.choice === 'rock') {
     player2Fighter.src = './assets/happy-rocks.png';
+    player2Fighter.alt = 'rocks image';
     player2ChosenFighter;
   } if (game.player2.choice === 'paper') {
     player2Fighter.src = './assets/happy-paper.png';
+    player2Fighter.alt = 'paper image';
     player2ChosenFighter;
   } if (game.player2.choice === 'scissors') {
     player2Fighter.src = './assets/happy-scissors.png';
+    player2Fighter.alt = 'scissors image';
     player2ChosenFighter;
   } if (game.player2.choice === 'lizard') {
     player2Fighter.src = './assets/lizard.png';
+    player2Fighter.alt = 'lizard image';
     player2ChosenFighter;
   } if (game.player2.choice === 'alien') {
     player2Fighter.src = './assets/happy-alien.png';
+    player2Fighter.alt = 'alien image';
     player2ChosenFighter;
   }
 }
