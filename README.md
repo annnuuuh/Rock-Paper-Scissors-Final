@@ -2,7 +2,7 @@
 ## Rock, Paper, Scissors!
 
 #### Overview
-This is a Rock, Paper, Scissors game that allows users to battle a computer player in two versions of the game, Classic & 🌶 Spicy 🌶! If you have to take a break, not to worry! The game will save your wins.
+This is a Rock, Paper, Scissors game that allows users to battle a computer player in two versions of the game, Classic & 🌶  Spicy 🌶! If you have to take a break, not to worry! The game will save your wins.
 
 ![alt text](./assets/ezgif.com-gif-maker.gif)
 
@@ -14,12 +14,12 @@ CSS
 JAVASCRIPT
 
 #### File Architecture
-assets -- This is where all assets used in this web app or in this README live.
-player.js -- This is the framework for both players, the human user and the computer.
-game.js -- This is the game board! All functionality of the game lives here.
-main.js -- DOM functionality! This is where the magic, that the user sees, lives.
-index.html -- This is where all of the html lives! 💀
-styles.css -- This is where all of the styling lives. 👗
+*assets* -- This is where all assets used in this web app or in this README live.
+*player.js* -- This is the framework for both players, the human user and the computer.
+*game.js* -- This is the game board! All functionality of the game lives here.
+*main.js* -- DOM functionality! This is where the magic, that the user sees, lives.
+*index.html* -- This is where all of the html lives! 💀
+*styles.css* -- This is where all of the styling lives. 👗
 
 
 #### Local Installation
