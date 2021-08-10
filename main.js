@@ -26,28 +26,28 @@ classicGameBtn.addEventListener('click', startClassicGame);
 spicyGameBtn.addEventListener('click', startSpicyGame);
 changeGameBtn.addEventListener('click', chooseNewGameType);
 rockBtn.addEventListener('click', function () {
-  playerTurns('rock')
+  playGame('rock')
 });
 scissorsBtn.addEventListener('click', function () {
-  playerTurns('scissors')
+  playGame('scissors')
 });
 paperBtn.addEventListener('click', function () {
-  playerTurns('paper')
+  playGame('paper')
 });
 spicyAlienBtn.addEventListener('click', function () {
-  playerTurns('alien')
+  playGame('alien')
 });
 spicyLizardBtn.addEventListener('click', function () {
-  playerTurns('lizard')
+  playGame('lizard')
 });
 spicyRockBtn.addEventListener('click', function () {
-  playerTurns('rock')
+  playGame('rock')
 });
 spicyScissorsBtn.addEventListener('click', function () {
-  playerTurns('scissors')
+  playGame('scissors')
 });
 spicyPaperBtn.addEventListener('click', function () {
-  playerTurns('paper')
+  playGame('paper')
 });
 
 window.onload = function() {
@@ -64,7 +64,7 @@ function hide(element) {
   element.classList.add('hidden');
 }
 
-function playerTurns(choice) {
+function playGame(choice) {
   show(changeGameBtn);
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
@@ -118,12 +118,12 @@ function showPlayer2Fighter() {
 }
 
 function startAnotherGame() {
-    hide(chosenFightersView);
-    hide(chooseGameView);
-    if (game.type === 'spicy') {
-      show(spicyGameView);
-  } if (game.type === 'classic') {
-      show(classicGameView);
+  hide(chosenFightersView);
+  hide(chooseGameView);
+  if (game.type === 'spicy') {
+    show(spicyGameView);
+} if (game.type === 'classic') {
+    show(classicGameView);
   }
 }
 
@@ -142,6 +142,7 @@ function startSpicyGame(event) {
 }
 
 function startNewGame(type) {
+  // game = new Game();
   game.playGame(type);
 }
 

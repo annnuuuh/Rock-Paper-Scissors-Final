@@ -2,7 +2,7 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = localStorage.getItem(`${this.name} wins`) || 0;
+    this.wins = parseInt(localStorage.getItem(`${this.name} wins`)) || 0;
     this.choice = null;
   }
 
@@ -26,7 +26,8 @@ class Player {
   retrieveWinsFromStorage() {
     var retrievedObject = localStorage.getItem(`${this.name} wins`);
     var parsedObject = JSON.parse(retrievedObject);
-    return parsedObject;
+    this.wins = parsedObject;
+    return `Wins: ${this.wins}`;
   }
 
 }
