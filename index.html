@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Sen&display=swap" rel="stylesheet">
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
@@ -23,45 +23,48 @@
       <h2>Choose your game!</h2>
       <button class="classic-game-button">
         <h3>🪨 CLASSIC ✂️</h3>
-        <p>rock > scissors</p>
-        <p>paper > rock</p>
-        <p>scissors > paper</p>
+        <ul>
+          <li>ROCK > SCISSORS</li>
+          <li>PAPER > ROCK</li>
+          <li>SCISSORS > PAPER</li>
+        </ul>
       </button>
       <button class="spicy-game-button">
         <h3>🦎 SPICY 👽</h3>
-          <p>rock > lizard & scissors</p>
-          <p>paper > rock & alien</p>
-          <p>scissors > paper & lizard</p>
-          <p>lizard > paper & alien</p>
-          <p>alien > paper & rock</p>
+        <ul>
+          <li>ROCK > LIZARD & SCISSORS</li>
+          <li>PAPER > ROCK & ALIEN</li>
+          <li>SCISSORS > PAPER & LIZARD</li>
+          <li>LIZARD > PAPER & ALIEN</li>
+          <li>ALIEN > PAPER & ROCK</li>
+        </ul>
       </button>
     </section>
     <section class="view classic-game-container hidden">
-        <h1>Rock, Paper, Scissors</h1>
-        <h2>Choose your fighter!</h2>
-        <div class="fighter-options">
-          <input type="image" id="rockBtn" name="options" src="./assets/happy-rocks.png" alt="rocks image">
-          <input type="image" id="paperBtn" name="options" src="./assets/happy-paper.png" alt="paper image">
-          <input type="image" id="scissorsBtn" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+      <h1>Rock, Paper, Scissors</h1>
+      <h2>Choose your fighter!</h2>
+      <div class="fighter-options">
+        <input type="image" id="rockBtn" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+        <input type="image" id="paperBtn" name="options" src="./assets/happy-paper.png" alt="paper image">
+        <input type="image" id="scissorsBtn" name="options" src="./assets/happy-scissors.png" alt="scissors image">
       </div>
     </section>
-      <section class="view spicy-game-container hidden">
-        <h1>Rock, Paper, Scissors</h1>
-        <h2>Choose your fighter!</h2>
-        <div class="fighter-options">
-          <input type="image" id="rockBtnSpicy" name="options" src="./assets/happy-rocks.png" alt="rocks image">
-          <input type="image" id="paperBtnSpicy" name="options" src="./assets/happy-paper.png" alt="paper image">
-          <input type="image" id="scissorsBtnSpicy" name="options" src="./assets/happy-scissors.png" alt="scissors image">
-          <input type="image" id="lizardBtnSpicy" name="options" src="./assets/lizard.png" alt="lizard image">
-          <input type="image" id="alienBtnSpicy" name="options" src="./assets/happy-alien.png" alt="alien image">
-        </div>
-      </section>
-      <section class="view winning-player hidden">
-        <h1>Rock, Paper, Scissors</h1>
-        <h2 id="announceWinner">It's a draw!</h2>
-        <div class="chosen-fighters-container">
-        </div>
-      </section>
+    <section class="view spicy-game-container hidden">
+      <h1>Rock, Paper, Scissors</h1>
+      <h2>Choose your fighter!</h2>
+      <div class="fighter-options">
+        <input type="image" id="rockBtnSpicy" name="options" src="./assets/happy-rocks.png" alt="rocks image">
+        <input type="image" id="paperBtnSpicy" name="options" src="./assets/happy-paper.png" alt="paper image">
+        <input type="image" id="scissorsBtnSpicy" name="options" src="./assets/happy-scissors.png" alt="scissors image">
+        <input type="image" id="lizardBtnSpicy" name="options" src="./assets/lizard.png" alt="lizard image">
+        <input type="image" id="alienBtnSpicy" name="options" src="./assets/happy-alien.png" alt="alien image">
+      </div>
+    </section>
+    <section class="view winning-player hidden">
+      <h1>Rock, Paper, Scissors</h1>
+      <h2 id="announceWinner">It's a draw!</h2>
+      <div class="chosen-fighters-container"></div>
+    </section>
     <aside class="computer-stats-container">
       <h1>‍💻</h1>
       <h2>Computer</h2>

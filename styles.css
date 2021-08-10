@@ -1,6 +1,10 @@
 * {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Sen', sans-serif;
   color: #FFFFFF;
+}
+
+html {
+  background-color: #049297;
 }
 
 main {
@@ -20,7 +24,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-color: #03767A;
-  height: 100%;
+  height: 100vh;
   width: 15%;
 }
 
@@ -50,17 +54,20 @@ main {
   margin-top: 75px;
 }
 
-.change-game-button:hover {
-  border: solid 2px white;
-  cursor: pointer;
-}
-
-.game-console-container,
-.classic-game-container,
-.spicy-game-container {
+.game-console-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 68%;
+  margin: 0;
+}
+
+.classic-game-container,
+.spicy-game-container,
+.winning-player {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   height: 100%;
   width: 68%;
@@ -71,15 +78,16 @@ main {
 .classic-game-container h1,
 .spicy-game-container h1,
 .winning-player h1 {
+  font-family: 'Bangers', cursive;
   font-size: 70px;
-  font-weight: 700;
 }
 
-.game-console-container h2,
 .classic-game-container h2,
 .spicy-game-container h2,
-.winning-player h2 {
-  margin-top: -95px;
+.winning-player h2,
+.game-console-container h2 {
+  margin-top: -50px;
+  margin-bottom: 40px;
 }
 
 .game-console-container button {
@@ -93,19 +101,26 @@ main {
   width: 25%;
   padding: 10px;
   cursor: pointer;
+  border-radius: 5px;
+  margin-top: 30px;
 }
 
-.game-console-container button:hover {
+.game-console-container button:hover,
+.change-game-button:hover {
   border: solid 2px white;
 }
 
-.classic-game-button p,
-.spicy-game-button p {
-  margin: 0;
+.classic-game-button ul,
+.spicy-game-button ul {
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 40px;
 }
 
 .classic-game-button h3,
 .spicy-game-button h3 {
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
   margin-top: 10;
 }
 
@@ -116,35 +131,19 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   width: 70%;
-  margin-top: 0;
+  margin-top: 100px;
 }
 
-#rockBtn,
-#paperBtn,
-#scissorsBtn,
-#lizardBtnSpicy,
-#alienBtnSpicy,
-#rockBtnSpicy,
-#paperBtnSpicy,
-#scissorsBtnSpicy {
+.fighter-options input {
   width: 175px;
   height: auto;
   margin-bottom: 20px;
 }
 
-.winning-player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 100%;
-}
-
 .chosen-fighters-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 200px;
+  margin-top: 100px;
 }
 .chosen-fighters-container img {
   width: 175px;
